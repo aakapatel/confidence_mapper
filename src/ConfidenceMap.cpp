@@ -48,7 +48,7 @@ ConfidenceMap::ConfidenceMap(std::shared_ptr<rclcpp::Node> nodeHandle)
   fusedMap_.setBasicLayers({"elevation", "upper_bound", "lower_bound"});
   clear();
 
-  confidenceMapFusedPublisher_ = nodeHandle_->create_publisher<grid_map_msgs::msg::GridMap>("confidence_map", 1);
+  confidenceMapFusedPublisher_ = nodeHandle_->create_publisher<grid_map_msgs::msg::GridMap>("confidence_map_raw", 1);
   if (!underlyingMapTopic_.empty()) {
     underlyingMapSubscriber_ = nodeHandle_->create_subscription<grid_map_msgs::msg::GridMap>(underlyingMapTopic_, 1, std::bind(&ConfidenceMap::underlyingMapCallback, this, std::placeholders::_1));
   }

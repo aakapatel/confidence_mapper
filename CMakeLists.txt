@@ -61,7 +61,6 @@ include_directories(
   include
   SYSTEM
     ${Boost_INCLUDE_DIRS}
-    # ${catkin_INCLUDE_DIRS}
     ${Eigen3_INCLUDE_DIRS}
     ${PCL_INCLUDE_DIRS}
 )
@@ -86,6 +85,7 @@ ament_target_dependencies(${PROJECT_NAME}_pcl_types
 add_library(${PROJECT_NAME}_library
   src/ConfidenceMapping.cpp
   src/ConfidenceMap.cpp
+  src/Filter.cpp
   src/input_sources/Input.cpp
   src/input_sources/InputSourceManager.cpp
   src/postprocessing/PostprocessorPool.cpp
@@ -125,6 +125,18 @@ add_executable(${PROJECT_NAME}
   src/confidence_mapping_node.cpp
 )
 
+add_executable(confidence_map_filter
+  src/confidence_map_filter_node.cpp
+)
+
+target_link_libraries(confidence_map_filter
+  ${PROJECT_NAME}_library
+)
+
+ament_target_dependencies(confidence_map_filter
+  ${DEPENDENCIES}
+)
+
 add_executable(listener
   src/test.cpp
 )
@@ -158,6 +170,11 @@ install(TARGETS
 install(TARGETS
   ${PROJECT_NAME}
   listener
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+install(TARGETS
+  confidence_map_filter
   DESTINATION lib/${PROJECT_NAME}
 )
 
