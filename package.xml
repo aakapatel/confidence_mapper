@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>confidence_mapping</name>
+  <version>1.0.0</version>
+  <description>Generates a confidence map based on LiDAR pointcloud, provides confidence, elevation, color layers</description>
+  <maintainer email="akash.patel@ltu.se">Akash Patel</maintainer>
+  <license>BSD</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <depend>boost</depend>
+  <depend>eigen</depend>
+  <depend>pcl</depend>
+  <depend>grid_map_core</depend>
+  <depend>grid_map_ros</depend>
+  <depend>grid_map_msgs</depend>
+  <depend>kindr</depend>
+  <depend>kindr_ros</depend>
+  <depend>message_filters</depend>
+  <depend>pcl_ros</depend>
+  <depend>rclcpp</depend>
+  <depend>sensor_msgs</depend>
+  <depend>std_msgs</depend>
+  <depend>std_srvs</depend>
+  <depend>tf2</depend>
+  <depend>tf2_ros</depend>
+  <depend>tf2_eigen</depend>
+  <depend>tf2_geometry_msgs</depend>
+
+  <test_depend>ament_cmake_gtest</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+
+</package>

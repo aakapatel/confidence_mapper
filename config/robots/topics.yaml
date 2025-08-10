@@ -1,0 +1,19 @@
+/**:
+  ros__parameters:
+    inputs: ['ground_truth_cloud']
+    ground_truth_cloud: # A name to identify the input source
+      type: pointcloud # Supported types: pointcloud
+      # topic: /husky/ouster/points
+      topic: /husky/merged/points
+      # topic: /husky/lidar_points
+      queue_size: 1
+      publish_on_update: false # Whether to publish the confidence map after a callback from this source.
+      sensor_processor:
+        type: laser
+    map_frame_id: "world"
+    robot_base_frame_id: "husky/base_link"
+    robot_pose_with_covariance_topic: "/husky/odometry/imu"
+    track_point_frame_id: "husky/base_link"
+    track_point_x: 0.0
+    track_point_y: 0.0
+    track_point_z: 0.0
