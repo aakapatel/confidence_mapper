@@ -9,14 +9,7 @@ confidence_map_filter:
         name: buffer_normalizer
         type: gridMapFilters/BufferNormalizerFilter
 
-      # filter2: # Duplicate layer.
-      #   name: duplicate
-      #   type: gridMapFilters/DuplicationFilter
-      #   params:
-      #     input_layer: ...
-      #     output_layer: ...
-
-      filter2:  # Delete color layer.
+      filter2:  # Delete layers to reduce publisher size.
         name: delete_original_layers
         type: gridMapFilters/DeletionFilter
         params: 

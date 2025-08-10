@@ -4,7 +4,7 @@
     ground_truth_cloud: # A name to identify the input source
       type: pointcloud # Supported types: pointcloud
       # topic: /husky/ouster/points
-      topic: /husky/merged/points
+      topic: /semantic_pcl_filtered
       # topic: /husky/lidar_points
       queue_size: 1
       publish_on_update: false # Whether to publish the confidence map after a callback from this source.
